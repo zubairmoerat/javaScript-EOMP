@@ -1,7 +1,82 @@
+/* bootStrapIcon */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+/* googleFont */
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Inter:wght@200&family=Montserrat:wght@300&family=Open+Sans:wght@600&display=swap');
 *,
 *::before,
 *::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    text-align: center;
+    font-family: 'Dhurjati', sans-serif;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#footer{
+    padding-top: 15px;
+}
+/* Landing Page */
+.rowHome1{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.rowHome2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+#card1{
+    width: 250px;
+    height: 200px;
+    box-shadow: 3px 3px 3px 3px gray;
+    background-image: url("https://i.postimg.cc/ncq0QtdK/download-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+#card2{
+    width: 250px;
+    height: 200px;
+    box-shadow: 3px 3px 3px 3px gray;
+    background-image: url("https://i.postimg.cc/FHRpCJrp/download-12.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+#card3{
+    width: 250px;
+    height: 200px;
+    box-shadow: 3px 3px 3px 3px gray;
+    background-image: url("https://i.postimg.cc/fLgm93Nq/download-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+}
+.colHome{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.landing1{
+    font-weight: 600;
+    font-size: 50px;
+    padding-top: 60px;
+}
+.landing2{
+    font-weight: 600;
+    font-size: 80px;
+    padding-bottom: 60px;
 }
