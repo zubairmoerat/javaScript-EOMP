@@ -80,3 +80,27 @@ body{
     font-size: 80px;
     padding-bottom: 60px;
 }
+/* About */
+.rowAbout{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.colAbout{
+    flex-basis: 95%;
+    background-color: lightsteelblue;
+    box-shadow: 0 0 20px 0 #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+#about h2{
+    font-weight: 400;
+    font-size: 60px;
+    padding-bottom: 30px;
+}
+#about h4{
+    font-weight: 200;
+    font-size: 40px;
+    padding-top: 20px;
+}
