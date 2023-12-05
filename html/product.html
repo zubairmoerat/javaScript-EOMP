@@ -28,7 +28,19 @@
           </div>
         </div>
     </nav>
-    <footer id="footer" class="container-fluid fixed-bottom">
+    <main id="product" class="container-fluid">
+      <h2>Our Products</h2>
+      <div class="row">
+        <div class="col">
+          <input type="text" placeholder="Search" required class="form-control" data-search-product>
+        </div>
+        <div class="col">
+          <button class="btn">Sort by Price</button>
+        </div>
+        <div class="row" data-products></div>
+      </div>
+    </main>
+    <footer id="footer" class="container-fluid position-relative">
         <div class="rowFooter">
             <p class="lead text-start">Fitness Fusion &copy; <span id="currYear"></span></p>
         </div>
