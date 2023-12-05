@@ -106,11 +106,29 @@ body{
 }
 /* Contact Page */
 .rowContact{
+    display: inline-flex;
+    flex-direction: column;
+}
+.rowContact2{
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
-.colContact{
+.colContact2{
     flex-basis: 50%;
+}
+.contactForm{
+    border: #000 2px solid;
+    width: max-content;
+}
+.input-field{
+    padding: 5px 10px;
+    margin: 10px 10px;
+    box-shadow: 0 0 5px 0 #000;
+}
+.input-field-textarea-field{
+    box-shadow: 0 0 5px 0 #000;
+    padding: 10px 20px;
+    margin: 10px 10px;
 }
