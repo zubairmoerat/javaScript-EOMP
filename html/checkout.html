@@ -30,9 +30,28 @@
     </nav>
     <main class="container-fluid" id="checkout" data-checkout>
       <h2>Checkout</h2>
-      <div class="row" data-checkout></div>
+      <div class="row">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Amount</th>
+          </tr>
+          </thead>
+          <tbody class="table-group-divider" table-checkout></tbody>
+          <tfoot class="table-group-divider">
+          <tr>
+              <td><a class="btn btn-secondary" id="pay" onclick='productPayment()'>Pay Now</a></td>
+              <td data-quantity></td>
+              <td data-amount></td>
+          </tr>
+        </tfoot>
+      </table>
+      </div>
     </main>
-    <footer id="footer" class="container-fluid fixed-bottom">
+    <footer id="footer" class="container-fluid position-relative">
         <div class="rowFooter">
             <p class="lead text-start">Fitness Fusion &copy; <span id="currYear"></span></p>
         </div>
