@@ -1,9 +1,15 @@
-//edit your products in a table
 //footer year
+debugger
 document.querySelector('#currYear').textContent = new Date().getFullYear()
+//variables
 let tableContent = document.querySelector('[table-products]')
+
 let products = JSON.parse(localStorage.getItem('products')) || []
 document.querySelector('[admin-add-product]')
+
+let savedProducts = document.getElementById('saveProduct')
+
+let sortedProducts = document.getElementById('adminSortProduct')
 
 function adminContent(){
     try{
@@ -17,7 +23,7 @@ function adminContent(){
                 <td>
                 <div>
                     <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateProduct"><i class="bi bi-pencil-fill"></i></button>
-                    <button class="btn btn-secondary" onclick="deleteProduct(${JSON.stringify([i])})"><i class="bi bi-trash"></i></button>
+                    <button class="btn btn-secondary" onclick="deleteProduct(${JSON.stringify(i)})"><i class="bi bi-trash"></i></button>
                     <div class="modal fade" id="updateProduct" tabindex="-1" aria-labelledby="updateProduct" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
@@ -87,6 +93,7 @@ function deleteProduct(item){
         products.splice(index, 1)
         localStorage.setItem('products', JSON.stringify(products))
         adminContent()
+        location.reload()
     }catch(e){
 
     }

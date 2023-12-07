@@ -32,7 +32,7 @@
       <h2>Checkout</h2>
       <div class="row">
         <table class="table table-bordered">
-          <thead>
+          <thead class="table-group-divider">
           <tr>
               <th scope="col">#</th>
               <th scope="col">Product</th>
@@ -43,9 +43,12 @@
           <tbody class="table-group-divider" table-checkout></tbody>
           <tfoot class="table-group-divider">
           <tr>
-              <td><a class="btn btn-secondary" id="pay" onclick='productPayment()'>Pay Now</a></td>
-              <td data-quantity></td>
-              <td data-amount></td>
+              <td>
+                <a class="btn btn-secondary" id="pay" onclick='productPayment()'>Pay Now</a>
+                <a class="btn btn-secondary" id="clear" onclick='clearProducts()'>Clear Items</a>
+              </td>
+              <td data-quantity>Total</td>
+              <td data-amount>Total</td>
           </tr>
         </tfoot>
       </table>

@@ -2,12 +2,12 @@
 //footer year
 document.querySelector('#currYear').textContent = new Date().getFullYear()
 
-let checkouts = JSON.parse(localStorage.getItem('checkout'));
+let checkout = JSON.parse(localStorage.getItem('checkout'));
 let checkoutTable = document.querySelector('[table-checkout]')
 function cartItems(){
     checkoutTable.innerHTML = ""
-    if(checkouts){
-        checkouts.forEach((checkout, i)=>{
+    if(checkout){
+        checkout.forEach((checkout, i)=>{
             checkoutTable.innerHTML +=`
                 <tr>
                     <td><img src="${checkout.image}" class="img-thumbnail w-25 h-25"></td>
@@ -19,9 +19,9 @@ function cartItems(){
         });
     }else{
         checkoutTable.innerHTML = `
-                    <tr>
-                        <td>Please add products</td>
-                    </tr>
+        <tr>
+            <td>Please add products</td>
+        </tr>
         `
     }
 }
@@ -29,4 +29,11 @@ cartItems()
 
 function productPayment(){
     alert('Payment Successful')
+}
+function clearProducts(){
+    checkoutTable.innerHTML =`
+    <tr>
+        <td>Please add products</td>
+    </tr>
+    `
 }

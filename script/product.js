@@ -170,7 +170,7 @@ productSort.addEventListener('click', function(){
           <h5 class="card-title">${item.name}</h5>
           <p class="card-text">${item.detail}</p>
           <p class="card-text">${item.amount}</p>
-          <a class="btn btn-secondary" id="cart" onclick='addToCart(${item})>Add To Cart</a>
+          <a class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(item)})>Add To Cart</a>
         </div>
         </div>
         </div>
@@ -180,7 +180,9 @@ productSort.addEventListener('click', function(){
 
 function addToCart(item) {
     if(item) {
-        purchased = JSON.parse(localStorage.getItem('checkout'));
+        // let purchased = []
+        JSON.parse(localStorage.getItem('products'));
+        // let purchased = JSON.parse(localStorage.getItem('products')) ? JSON.parse(localStorage.getItem('products')) : [];
         purchased.push(item);
         localStorage.setItem('checkout', JSON.stringify(purchased));
     }
