@@ -37,12 +37,43 @@
           <input type="text" class="form-control" admin-search required>
         </div>
         <div class="col">
-          <button class="btn btn-secondary">Sort</button>
+          <button class="btn btn-secondary" id="adminSortProduct">Sort</button>
+        </div>
+        <div class="col">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#adminAddProduct">
+            Add New 
+          </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="adminAddProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="form">
+                  <div class="container">
+                    <input class="form-control" type="text" placeholder="Enter the Product Name" name="addName" id="addName" required>
+                    <textarea class="form-control" placeholder="Enter the Product Details" name="addDetail" id="addSpec" required></textarea>
+                    <input class="form-control" type="number" placeholder="Enter the Product Amount" name="addAmount" id="addAmount" required >
+                    <input class="form-control" type="url" placeholder="Enter the image's url" name="addImage" id="addImage" required >
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="saveProduct">Save Changes</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
-        <table>
-          <thead>
+        <table class="table-responsive table-bordered">
+          <thead class="table-group-divider">
             <tr>
               <th>Product</th>
               <th>Image</th>
@@ -50,7 +81,7 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody table-products>
+          <tbody class="table-group-divider" table-products>
             
           </tbody>
         </table>
