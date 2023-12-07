@@ -85,7 +85,7 @@ localStorage.setItem('products', JSON.stringify([
         quantity: 1
     }
 ]))
-let purchased = []
+let purchased = []  
 let productWrapper = document.querySelector('[data-products]')
 function displayProducts(){
     productWrapper.innerHTML = " "
@@ -99,7 +99,7 @@ function displayProducts(){
               <h5 class="card-title">${product.name}</h5>
               <p class="card-text">${product.detail}</p>
               <p class="card-text">${product.amount}</p>
-              <a href="/html/checkout.html" class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(product)})'>Add To Cart</a>
+              <a class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(product)})'>Add To Cart</a>
             </div>
             </div>
             </div>
@@ -128,7 +128,7 @@ productSearch.addEventListener('keyup', ()=>{
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">${item.detail}</p>
               <p class="card-text">${item.amount}</p>
-              <a href="/html/checkout.html" class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(item)})'>Add To Cart</a>
+              <a class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(item)})'>Add To Cart</a>
             </div>
             </div>
             </div>
@@ -170,7 +170,7 @@ productSort.addEventListener('click', function(){
           <h5 class="card-title">${item.name}</h5>
           <p class="card-text">${item.detail}</p>
           <p class="card-text">${item.amount}</p>
-          <a href="/html/checkout.html" class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(item)})>Add To Cart</a>
+          <a class="btn btn-secondary" id="cart" onclick='addToCart(${item})>Add To Cart</a>
         </div>
         </div>
         </div>
@@ -180,6 +180,7 @@ productSort.addEventListener('click', function(){
 
 function addToCart(item) {
     if(item) {
+        purchased = JSON.parse(localStorage.getItem('checkout'))
         purchased.push(item)
         localStorage.setItem('checkout', JSON.stringify(purchased))
     }
