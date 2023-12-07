@@ -180,8 +180,8 @@ productSort.addEventListener('click', function(){
 
 function addToCart(item) {
     if(item) {
-        purchased = JSON.parse(localStorage.getItem('checkout'))
-        purchased.push(item)
-        localStorage.setItem('checkout', JSON.stringify(purchased))
+        purchased = JSON.parse(localStorage.getItem('checkout'));
+        purchased.push(item);
+        localStorage.setItem('checkout', JSON.stringify(purchased));
     }
 } 
