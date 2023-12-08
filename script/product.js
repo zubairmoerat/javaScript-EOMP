@@ -151,11 +151,12 @@ productSort.addEventListener('click', () => {
     }
 });
                         
-function addToCart(item) {
-if(item) {
-let purchased = []
-JSON.parse(localStorage.getItem('products'));
-// let purchased = JSON.parse(localStorage.getItem('products')) ? JSON.parse(localStorage.getItem('products')) : [];
-purchased.push(item);
-localStorage.setItem('checkout', JSON.stringify(purchased));
-} }
+let cart = JSON.parse(localStorage.getItem('products')) ? JSON.parse(localStorage.getItem('products')) : [];
+function addToCart(product) {
+try{
+cart.push(product);
+localStorage.setItem('checkout', JSON.stringify(cart));
+}catch(e){
+    alert('The Cart is under maintainance')
+}
+}

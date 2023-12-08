@@ -31,11 +31,11 @@
     <main class="container-fluid" id="checkout" data-checkout>
       <h2>Checkout</h2>
       <div class="row">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
           <thead class="table-group-divider">
           <tr>
-              <th scope="col">#</th>
               <th scope="col">Product</th>
+              <th scope="col">Details</th>
               <th scope="col">Quantity</th>
               <th scope="col">Amount</th>
           </tr>
@@ -47,8 +47,6 @@
                 <a class="btn btn-secondary" id="pay" onclick='productPayment()'>Pay Now</a>
                 <a class="btn btn-secondary" id="clear" onclick='clearProducts()'>Clear Items</a>
               </td>
-              <td data-quantity>Total</td>
-              <td data-amount>Total</td>
           </tr>
         </tfoot>
       </table>
