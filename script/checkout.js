@@ -2,6 +2,7 @@
 //footer year
 document.querySelector('#currYear').textContent = new Date().getFullYear()
 
+//gettting my products from the localStorage to display in my table
 let cart = JSON.parse(localStorage.getItem('checkout'));
 let checkoutTable = document.querySelector('[table-checkout]')
 function cartItems(){
@@ -23,11 +24,13 @@ function cartItems(){
 }
 cartItems()
 
+//this function is to clear the products in my table and is linked to onclick
 function clearProducts(){
     location.reload()
     localStorage.removeItem('checkout')
     alert('Press "OK" to remove items from your cart')
 }
+//this function is for product payment and clear products on my table
 function productPayment(){
     location.reload()
     localStorage.removeItem('checkout')

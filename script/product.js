@@ -75,6 +75,7 @@ let products = localStorage.getItem('products') ?
             amount: 3500
         }
     ]))
+//this puts products/objects in html
 let productWrapper = document.querySelector('[data-products]');
 function displayProducts(args) {
     productWrapper.innerHTML = " "
@@ -111,6 +112,7 @@ function displayProducts(args) {
 
 displayProducts(products);
 
+//searches products by name
 let productSearch = document.querySelector('[data-search-product]');
 productSearch.addEventListener('input', () => {
     try {
@@ -123,6 +125,7 @@ productSearch.addEventListener('input', () => {
     }
 })
 
+//sorts by the price
 let productSort = document.querySelector('.btn')
 let highest = false;
 productSort.addEventListener('click', () => {
@@ -140,6 +143,7 @@ productSort.addEventListener('click', () => {
     }
 });
 
+//puts objects in new localStorage for other page
 let cart = JSON.parse(localStorage.getItem('checkout')) || [];
 function addToCart(product) {
     debugger
