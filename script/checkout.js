@@ -2,38 +2,43 @@
 //footer year
 document.querySelector('#currYear').textContent = new Date().getFullYear()
 
-let checkout = JSON.parse(localStorage.getItem('checkout'));
+let cart = JSON.parse(localStorage.getItem('checkout'));
 let checkoutTable = document.querySelector('[table-checkout]')
 function cartItems(){
-    checkoutTable.innerHTML = ""
-    if(checkout){
-        checkout.forEach((checkout, i)=>{
-            checkoutTable.innerHTML +=`
-                <tr>
-                    <td><img src="${checkout.image}" class="img-thumbnail w-25 h-25"></td>
-                    <td>${checkout.name}</td>
-                    <td>${checkout.quantity}</td>
-                    <td>${checkout.amount}</td>
-                </tr>
-            `
-        });
-    }else{
-        checkoutTable.innerHTML = `
+    try{
+        let cartProducts = Object.groupBy(cart, item => { return item.id});
+        let paymentAmount = 0;
+        for(let i in cartProducts) {
+            let totalAmount = cartProducts[i].length * cartProducts[i].amount;
+            paymentAmount += totalAmount;
+            checkoutTable.innerHTML += `
+            <tr>
+                 <td>${cartProducts[i][0].name}</td>
+                 <td>${cartProducts[i][0].detail}</td>
+                 <td>${cartProducts[i].length}</td>
+                 <td>${cartProducts[i][0].amount}</td>
+            </tr>
+         `
+        }
+        checkoutTable.innerHTML +=`
         <tr>
-            <td>Please add products</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Your Total:${paymentAmount}</td>
         </tr>
         `
+    }catch(e){
+        checkoutTable.innerHTML = "Add items to your cart"
     }
 }
 cartItems()
 
+function clearProducts(){
+    location.reload()
+    localStorage.removeItem('checkout')
+    alert('Press "OK" removed items from your cart')
+}
 function productPayment(){
     alert('Payment Successful')
-}
-function clearProducts(){
-    checkoutTable.innerHTML =`
-    <tr>
-        <td>Please add products</td>
-    </tr>
-    `
 }
