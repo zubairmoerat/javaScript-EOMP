@@ -7,10 +7,9 @@ let tableContent = document.querySelector('[table-products]')
 let products = JSON.parse(localStorage.getItem('products')) || []
 document.querySelector('[admin-add-product]')
 
-let savedProducts = document.getElementById('saveProduct')
-
 let sortedProducts = document.getElementById('adminSortProduct')
 
+//displays my products in my admin table and has a modal for my edit function
 function adminContent(args){
     try{
         tableContent.innerHTML = ""
@@ -66,6 +65,7 @@ function adminContent(args){
 }
 adminContent(products)
 
+//this is my edit function
 function UpdateProduct(item, index){
     try{
         this.id = item.id;
@@ -83,6 +83,7 @@ function UpdateProduct(item, index){
     }
 }
 
+//this deletes my products on the website
 function deleteProduct(index){
     try{
         products.splice(index, 1)
@@ -94,6 +95,7 @@ function deleteProduct(index){
     }
 }
 
+//sorts products from new to old and old to new
 let highest = false;
 sortedProducts.addEventListener('click', () => {
     try{
@@ -111,6 +113,7 @@ sortedProducts.addEventListener('click', () => {
     }
 });
 
+//lets me add new product
 let adminSavedProduct = document.getElementById('saveProduct')
 adminSavedProduct.addEventListener('click', () => {
     try{
