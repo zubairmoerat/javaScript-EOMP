@@ -1,5 +1,5 @@
 //footer year
-debugger
+// debugger
 document.querySelector('#currYear').textContent = new Date().getFullYear()
 //variables
 let tableContent = document.querySelector('[table-products]')
@@ -43,7 +43,7 @@ function adminContent(){
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-secondary" onclick='new Update(${JSON.stringify(product)})'>Save changes</button>
+                          <button type="button" class="btn btn-secondary" onclick='updateProduct(${JSON.stringify(product)})'>Save changes</button>
                         </div>
                       </div>
                         </div> 
@@ -74,7 +74,7 @@ function UpdateProduct(item, e){
         this.amount = document.querySelector(`#admin-image${item.id}`).value;
         this.image = document.querySelector(`#admin${item.id}`).value;
 
-        let itemIndex = products.findIndex((data)=>{
+        let itemIndex = products.findIndex(data =>{
             return data.id === item.id;
         })
         products[itemIndex] = Object.assign({}, this);
