@@ -80,6 +80,9 @@ body{
     font-size: 100px;
     padding-bottom: 60px;
 }
+#Home{
+    background-color: rgb(193, 193, 193);
+}
 /* About Page*/
 .rowAbout{
     display: flex;
@@ -89,7 +92,7 @@ body{
 }
 .colAbout{
     flex-basis: 95%;
-    background-color: rgb(139, 140, 141);
+    background-color: rgb(193, 193, 193);
     box-shadow: 0 0 20px 0 darkblue;
     border: #000 solid 1px;
     border-radius: 5px;
@@ -106,18 +109,19 @@ body{
     padding-top: 20px;
 }
 /* Contact Page */
-.rowContact{
-    display: inline-flex;
-    flex-direction: column;
+#contact{
+    background-color: rgb(193, 193, 193);
 }
-.rowContact2{
+.rowContact{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    height: 80vh;
 }
-.colContact2{
-    flex-basis: 50%;
+.colContact{
+    flex-basis: 25%;
 }
 .contactForm{
     border: #000 2px solid;
@@ -133,10 +137,15 @@ body{
     padding: 10px 20px;
     margin: 10px 10px;
 }
+#contact h2{
+    font-weight: 400;
+    font-size: 60px;
+    padding-bottom: 30px;
+}
 /* Product Page */
 .card-body{
     width: 250px;
-    height: 200px;
+    height: 180px;
 }
 .card{
     height: fit-content;
@@ -144,4 +153,31 @@ body{
     padding: 20px 10px;
     margin-top: 15px;
     box-shadow: 0 0 10px 0 #000;
+}
+#product h2{
+    font-weight: 400;
+    font-size: 60px;
+    padding-bottom: 30px;
+}
+#product{
+    background-color: rgb(193, 193, 193);
+}
+/* Checkout Page */
+#checkout{
+    background-color: rgb(193, 193, 193);
+    height: 100vh;
+}
+#checkout h2{
+    font-weight: 400;
+    font-size: 60px;
+    padding-bottom: 30px;
+}
+/* Admin Page */
+#admin{
+    background-color: rgb(193, 193, 193);
+}
+#admin h2{
+    font-weight: 400;
+    font-size: 60px;
+    padding-bottom: 30px;
 }
