@@ -29,5 +29,7 @@ function clearProducts(){
     alert('Press "OK" to remove items from your cart')
 }
 function productPayment(){
+    location.reload()
+    localStorage.removeItem('checkout')
     alert('Payment Successful')
 }
