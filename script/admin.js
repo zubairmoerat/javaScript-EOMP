@@ -18,9 +18,10 @@ function adminContent(args){
             tableContent.innerHTML +=`
             <tr>
                 <td>${product.name}</td>
-                <td><img src="${product.image}" alt="${product.id}" class="img-thumbnail"></td>
+                <td>${product.detail}</td>
+                <td><img src="${product.image}" alt="${product.id}" class="img-thumbnail h-25 w-25"></td>
                 <td>R${product.amount}</td>
-                <td>
+                <td> 
                 <div>
                     <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#updateProduct${product.id}"><i class="bi bi-pencil-fill"></i></button>
                     <button class="btn btn-secondary" onclick="deleteProduct(${JSON.stringify(i)})"><i class="bi bi-trash"></i></button>
@@ -37,13 +38,13 @@ function adminContent(args){
                           <input class="form-control" type="text" placeholder="Enter a Product Name" value="${product.name}" name ="admin-name" id="admin-name${product.id}" required>
                           <input class="form-control" type="text" placeholder="Enter Image URL" value="${product.image}" name="admin-image" id="admin-image${product.id}" required>
                           <textarea class="form-control my-2" placeholder="Enter your Product details" required name="admin-details" id="admin-details${product.id}">${product.detail}</textarea>
-                          <input class="form-control" type="number" placeholder="Enter the Product Amount" value="${product.amount} name="admin-amount" id="admin-amount${product.id}" required>
+                          <input class="form-control" type="number" placeholder="Enter the Product Amount" value="${product.amount}" name="admin-amount" id="admin-amount${product.id}" required>
                           </div>
                           </form>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-secondary" onclick='UpdateProduct(${product}, ${i})'>Save changes</button>
+                          <button type="button" class="btn btn-secondary" onclick='new UpdateProduct(${product}, ${i})'>Save changes</button>
                         </div>
                       </div>
                         </div> 

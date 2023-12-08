@@ -64,20 +64,20 @@ body{
     background-size: cover;
     background-position: center;
     color: white;
-    
 }
 .colHome{
     padding-top: 20px;
     padding-bottom: 20px;
+    text-decoration: none;
 }
 .landing1{
     font-weight: 600;
-    font-size: 50px;
+    font-size: 70px;
     padding-top: 60px;
 }
 .landing2{
     font-weight: 600;
-    font-size: 80px;
+    font-size: 100px;
     padding-bottom: 60px;
 }
 /* About Page*/
@@ -89,8 +89,9 @@ body{
 }
 .colAbout{
     flex-basis: 95%;
-    background-color: lightsteelblue;
-    box-shadow: 0 0 20px 0 #000;
+    background-color: rgb(139, 140, 141);
+    box-shadow: 0 0 20px 0 darkblue;
+    border: #000 solid 1px;
     border-radius: 5px;
     padding: 5px;
 }
